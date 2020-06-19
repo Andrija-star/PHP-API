@@ -1,0 +1,48 @@
+<?php
+  $list = $man->getElement();
+?>
+
+<main>
+  <div class="container">
+    <h1 class="text-center">Gestion de contenus <a href="?p=ajouter" class="btn btn-success">Ajouter</a></h1>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Titre</th>
+          <th scope="col">Période</th>
+          <th scope="col">Statistique</th>
+          <th scope="col">Déscription</th>
+          <th scope="col">Evenement</th>
+          <th scope="col">Action</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach($list AS $l){ ?>
+        <tr>
+          <td scope="row"><?=$l->titre; ?></td>
+          <td scope="row">du <?=$l->annee_debut; ?> au <?=$l->annee_fin; ?></td>
+          <td><?=$l->stat; ?> morts</td>
+          <td><?=$l->descriptif; ?></td>
+          <td>
+            <?php 
+              if($l->type == 1){
+                echo $l->type."ère ";
+              }else{
+                echo $l->type."ème ";
+              }
+
+            ?>
+            guerre mondiale
+          </td>
+          <td>
+            <a href="?p=modifie&id=<?=$l->id; ?>" class="btn btn-primary btn-sm">Modifier</a>
+            <a onclick="return confirm('Confirmez la suppression ?')" href="controller/suprimer.php?id=<?=$l->id; ?>"
+              class="btn btn-danger btn-sm">Supprimer</a>
+          </td>
+        </tr>
+        <?php } ?>
+      </tbody>
+    </table>
+  </div>
+</main>

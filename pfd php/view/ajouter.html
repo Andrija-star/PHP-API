@@ -1,0 +1,46 @@
+<main>
+  <div class="container">
+    <h1 class="text-center">Ajout de contenus <a href="?p=acceuil" class="btn btn-default">retour</a></h1>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6 col">
+        <form action="controller/ajouter.php" method="POST">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="exampleInputEmail1">Titre</label>
+              <input type="text" name="titre" class="form-control" id="titre" aria-describedby="titre"
+                placeholder="Titre">
+
+            </div>
+            <div class="form-group col-md-6">
+              <label for="Période">Période début</label>
+              <input type="text" name="pd" class="form-control" id="Période" placeholder="Période">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="Période">Période Fin</label>
+              <input type="text" name="pf" class="form-control" id="Période" placeholder="Période">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="Statistique">Statistique</label>
+              <input type="text" name="stat" class="form-control" id="Statistique" placeholder="Statistique">
+            </div>
+            <div class="form-group col-md-12">
+              <label for="Evenement">Evenement</label>
+              <select name="type" class="form-control">
+                <option value="">Choisir</option>
+                <option value="1">1er guerre mondial</option>
+                <option value="2">2ème guerre mondial</option>
+              </select>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="Déscription">Déscription</label>
+              <textarea rows="6" name="desc" class="form-control" id="Déscription" placeholder="Déscription"></textarea>
+            </div>
+          </div>
+
+          <button type="submit" name="submit" class="btn btn-primary">Envoyé</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
